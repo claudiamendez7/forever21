@@ -1,72 +1,120 @@
-// Clase Ropa
-class Ropa {
-    constructor(nombre, precio) {
-      this.nombre = nombre;
-      this.precio = precio;
-    }
-  
-    calcularDescuento() {
-      const descuento = Math.floor(Math.random() * 50) + 1; // Descuento aleatorio entre 1 y 50
-      return this.precio - (this.precio * descuento) / 100;
-    }
-  
-    calcularDescuentoConBono() {
-      const descuento = Math.floor(Math.random() * 50) + 1; // Descuento aleatorio entre 1 y 50
-      let precioConDescuento = this.precio - (this.precio * descuento) / 100;
+// Variables
+const carrito = document.querySelector('#carrito');
+const listaCursos = document.querySelector('#lista-cursos');
+const contenedorCarrito = document.querySelector('#lista-carrito tbody');
+const vaciarCarritoBtn = document.querySelector('#vaciar-carrito'); 
+let articulosCarrito = [];
 
-      const bonus = "FOREVERSTORE";
-      if (bonus === "FOREVERSTORE") {
-        const bonusDescuento = Math.floor(Math.random() * 15) + 1; // Descuento adicional aleatorio entre 1 y 15
-        precioConDescuento -= (precioConDescuento * bonusDescuento) / 100;
+// Listeners
+cargarEventListeners();
+
+function cargarEventListeners() {
+     // Dispara cuando se presiona "Agregar Carrito"
+     listaCursos.addEventListener('click', agregarCurso);
+
+     // Cuando se elimina un curso del carrito
+     carrito.addEventListener('click', eliminarCurso);
+
+     // Al Vaciar el carrito
+     vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
+
+}
+
+
+
+
+// Funciones
+// Función que añade el curso al carrito
+function agregarCurso(e) {
+     e.preventDefault();
+     // Delegation para agregar-carrito
+     if(e.target.classList.contains('agregar-carrito')) {
+          const curso = e.target.parentElement.parentElement;
+          // Enviamos el curso seleccionado para tomar sus datos
+          leerDatosCurso(curso);
+     }
+}
+
+// Lee los datos del curso
+function leerDatosCurso(curso) {
+     const infoCurso = {
+          imagen: curso.querySelector('img').src,
+          titulo: curso.querySelector('h4').textContent,
+          precio: curso.querySelector('.precio span').textContent,
+          id: curso.querySelector('a').getAttribute('data-id'), 
+          cantidad: 1
+     }
+
+
+     if( articulosCarrito.some( curso => curso.id === infoCurso.id ) ) { 
+          const cursos = articulosCarrito.map( curso => {
+               if( curso.id === infoCurso.id ) {
+                    curso.cantidad++;
+                     return curso;
+                } else {
+                     return curso;
+             }
+          })
+          articulosCarrito = [...cursos];
+     }  else {
+          articulosCarrito = [...articulosCarrito, infoCurso];
+     }
+
+     // console.log(articulosCarrito)
+
+     
+
+     // console.log(articulosCarrito)
+     carritoHTML();
+}
+
+// Elimina el curso del carrito en el DOM
+function eliminarCurso(e) {
+     e.preventDefault();
+     if(e.target.classList.contains('borrar-curso') ) {
+          // e.target.parentElement.parentElement.remove();
+          const cursoId = e.target.getAttribute('data-id')
+          
+          // Eliminar del arreglo del carrito
+          articulosCarrito = articulosCarrito.filter(curso => curso.id !== cursoId);
+
+          carritoHTML();
+     }
+}
+
+
+// Muestra el curso seleccionado en el Carrito
+function carritoHTML() {
+
+     vaciarCarrito();
+
+     articulosCarrito.forEach(curso => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+               <td>  
+                    <img src="${curso.imagen}" width=100>
+               </td>
+               <td>${curso.titulo}</td>
+               <td>${curso.precio}</td>
+               <td>${curso.cantidad} </td>
+               <td>
+                    <a href="#" class="borrar-curso" data-id="${curso.id}">X</a>
+               </td>
+          `;
+          contenedorCarrito.appendChild(row);
+     });
+
+}
+
+// Elimina los cursos del carrito en el DOM
+function vaciarCarrito() {
+     // forma lenta
+     // contenedorCarrito.innerHTML = '';
+
+
+     // forma rapida (recomendada)
+     while(contenedorCarrito.firstChild) {
+          contenedorCarrito.removeChild(contenedorCarrito.firstChild);
       }
-  
-      return precioConDescuento;
-    }
-
-  
-  }
-  
-  // Crear objetos Ropa
-  const jeans = new Ropa("Jeans", 40);
-  const shirt = new Ropa("Shirt", 60);
-  const skirt = new Ropa("Skirt", 80);
-  
-  // Elementos del DOM
-  const productCards = document.querySelectorAll(".product-card");
-  
-  // Función para mostrar los precios en la card seleccionada
-  function showPrices(card, ropa) {
-    const initialPrice = ropa.precio.toFixed(2);
-    const discountedPrice = ropa.calcularDescuento().toFixed(2);
-    const totalPrice = ropa.calcularDescuentoConBono().toFixed(2);
-  
-    const priceElement = card.querySelector(".product-price");
-    priceElement.textContent = `$${initialPrice} (Discounted: $${discountedPrice} - Total: $${totalPrice})`;
-  }
-  
-  // Agregar evento de clic a cada card de producto
-  productCards.forEach((card) => {
-    const productName = card.querySelector(".product-name").textContent;
-  
-    // Asignar objeto Ropa según el nombre del producto
-    let ropa;
-    switch (productName) {
-      case "Jeans":
-        ropa = jeans;
-        break;
-      case "Shirt":
-        ropa = shirt;
-        break;
-      case "Skirt":
-        ropa = skirt;
-        break;
-    }
-  
-    // Agregar evento de clic a la imagen del producto
-    const productImg = card.querySelector(".product-img");
-    productImg.addEventListener("click", () => {
-      showPrices(card, ropa);
-    });
-  });
-
+}
   

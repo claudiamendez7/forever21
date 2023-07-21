@@ -1,39 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>fOREVERSTORE</title>
-  <link rel="stylesheet" href="styles/assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RBW Academy</title>
+    <link rel="stylesheet" href="styles/assets/normalize.css">
+    <link rel="stylesheet" href="styles/assets/skeleton.css">
+    <link rel="stylesheet" href="styles/assets/style.css">
 </head>
-
 <body>
-  <header id="header" class="header">
+<header id="header" class="header">
     <div class="container">
         <div class="row">
             <div class="four columns">
-                <img src="styles/assets/732938_wly4ttwgqfropvdtcx8yrgoij.png" id="logo">
-                <div class="search-container">
-                  <input type="text" placeholder="Search Product" class="search-input">
-                  <button class="search-btn">Search</button>
-                </div>
-                <img src="styles/assets/usern.png" class="user-icon" alt="User">
-                <img src="styles/assets/basket-cart-icon-27.png" class="cart-icon" alt="Cart">
-              </div>
-              <div class="dropdown">
-                <button class="dropbtn">Categories</button>
-                <div class="dropdown-content">
-                  <a href="#">Men</a>
-                  <a href="#">Women</a>
-                  <a href="#">Kids</a>
-                  <a href="#">Accessories</a>
-                </div>
+                <img src="styles/assets/logo.png" id="logo">
             </div>
             <div class="two columns u-pull-right">
                 <ul>
                     <li class="submenu">
-                            <img src="styles/assets/basket-cart-icon-27.png" id="img-carrito">
+                            <img src="styles/assets/cart-outline.png" id="img-carrito">
                             <div id="carrito">
                                     
                                     <table id="lista-carrito" class="u-full-width">
@@ -49,7 +35,7 @@
                                         <tbody></tbody>
                                     </table>
 
-                                    <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                                    <a href="#" id="vaciar-carrito" class="button u-full-width">Empy Cart</a>
                             </div>
                     </li>
                 </ul>
@@ -58,57 +44,188 @@
     </div>
     </header>
 
-    <section class="products-section">
-      <div class="container">
-        <div class="product-card">
-          <div class="product-image">
-            <img src="styles/assets/jeans.jpg" alt="Jeans" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Jeans</h3>
-            <p class="product-price">$40</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
+
+    <div id="hero">
+        <div class="container">
+            <div class="row">
+                    <div class="six columns">
+                        <div class="contenido-hero">
+                                <h2>Learn a new languge</h2>
+                                <p>All courses at $15</p>
+                                <form action="#" id="busqueda" method="post" class="formulario">
+                                    <input class="u-full-width" type="text" placeholder="What language would you like to learn?" id="buscador">
+                                    <input type="submit" id="submit-buscador" class="submit-buscador">
+                                </form>
+                        </div>
+                    </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="barra">
+        <div class="container">
+            <div class="row">
+                    <div class="four columns icono icono1">
+                        <p>More than 6 courses online<br>
+                        Check out the one you're most interested in</p>
+                    </div>
+                    <div class="four columns icono icono2">
+                        <p>Qualified Teachers <br>
+                        Learn differents accents</p>
+                    </div>
+                    <div class="four columns icono icono3">
+                        <p>Discounts for every course purchased <br>
+                        Learn at your own rythim</p>
+                    </div>
+            </div>
         </div>
 
-        <div class="product-card">
-          <div class="product-image">
-            <img src="styles/assets/shirt.jpg" alt="Shirt" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Shirt</h3>
-            <p class="product-price">$60</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
+    </div>
+
+    <div id="lista-cursos" class="container">
+        <h1 id="encabezado" class="encabezado">Online Courses</h1>
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="styles/assets/uk-flag.gif" class="imagen-curso u-full-width">
+                    <div class="info-card">
+                        <h4>English for beginners A1-A2</h4>
+                        <p>John Cooper</p>
+                        <span>★★★☆☆</span>
+                        <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Add to Cart</a>
+                    </div>
+                </div> <!--.card-->
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="styles/assets/fr-flag.gif" class="imagen-curso u-full-width">
+                        <div class="info-card">
+                            <h4>French for intermediate A2-B1</h4>
+                            <p>Benoit Lacroix</p>
+                            <span>★★★★★</span>
+                            <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="2">Add to Cart</a>
+                        </div>
+                    </div>
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="styles/assets/gm-flag.gif" class="imagen-curso u-full-width">
+                        <div class="info-card">
+                            <h4>German for beginners A1-A2</h4>
+                            <p>Oliver Khan</p>
+                            <span>★★★★★</span>
+                            <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="3">Add to Cart</a>
+                        </div>
+                    </div> <!--.card-->
+            </div>
+
+        </div> <!--.row-->
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="styles/assets/br-flag.gif" class="imagen-curso u-full-width">
+                    <div class="info-card">
+                        <h4>Preparation for CELPE-BRAS</h4>
+                        <p>Marcio Santos</p>
+                        <span>★★★☆☆</span>
+                        <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="4">Add to Cart</a>
+                    </div>
+                </div> <!--.card-->
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="styles/assets/ch-flag.gif" class="imagen-curso u-full-width">
+                        <div class="info-card">
+                            <h4>Mandarin for Business</h4>
+                            <p>Han Dong</p>
+                            <span>★★★★★</span>
+                            <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="5">Add to Cart</a>
+                        </div>
+                    </div> <!--.card-->
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="styles/assets/it-flag.gif" class="imagen-curso u-full-width">
+                        <div class="info-card">
+                            <h4>Italian for advanced B2-C1</h4>
+                            <p>Paolo Maldini</p>
+                            <span>★★★★★</span>
+                            <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="6">Add to Cart</a>
+                        </div>
+                    </div> <!--.card-->
+            </div>
+        </div> <!--.row-->
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="styles/assets/ja-flag.gif" class="imagen-curso u-full-width">
+                    <div class="info-card">
+                        <h4>Japanese Intensive A1-B1</h4>
+                        <p>Kudo Shinichi</p>
+                        <span>★★★★★</span>
+                        <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="7">Add to Cart</a>
+                    </div>
+                </div> <!--.card-->
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="styles/assets/ks-flag.gif" class="imagen-curso u-full-width">
+                        <div class="info-card">
+                            <h4>Korean for Beginners A1-A2</h4>
+                            <p>Kim Minji</p>
+                            <span>★★★★★</span>
+                            <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="8">Add to Cart</a>
+                        </div>
+                    </div> <!--.card-->
+            </div>
+            <div class="four columns">
+                    <div class="card">
+                        <img src="styles/assets/co-flag.gif" class="imagen-curso u-full-width">
+                        <div class="info-card">
+                            <h4>Spanish for foreigners</h4>
+                            <p>Ana Ocampo</p>
+                            <span>★★★☆☆</span>
+                            <p class="precio">$200  <span class="u-pull-right ">$15</span></p>
+                            <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="9">Add to Cart</a>
+                        </div>
+                    </div> <!--.card-->
+            </div>
+        </div> <!--.row-->
+        
+    </div>  
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                    <div class="four columns">
+                            <nav id="principal" class="menu">
+                                <a class="enlace" href="#">For your Business</a>
+                                <a class="enlace" href="#">Become a Teacher</a>
+                                <a class="enlace" href="#">Apps</a>
+                                <a class="enlace" href="#">Technical Support</a>
+                                <a class="enlace" href="#">Themes</a>
+                            </nav>
+                    </div>
+                    <div class="four columns">
+                            <nav id="secundaria" class="menu">
+                                <a class="enlace" href="#">Who are We?</a>
+                                <a class="enlace" href="#">Employment</a>
+                                <a class="enlace" href="#">Blog</a>
+                            </nav>
+                    </div>
+            </div>
         </div>
+    </footer>
 
-        <div class="product-card">
-          <div class="product-image">
-            <img src="styles/assets/skirt.webp" alt="Skirt" class="product-img">
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Skirt</h3>
-            <p class="product-price">$80</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-    </section>
+    <script src="index.js"></script>
 
-  <div class="discount-btn">
-    <h4>Write "FOREVERSTORE" for aditional discount</h4>
-    <span></span>
-    <span></span>
-    <input type="text" id="discount-input" placeholder="Enter discount code">
-    <button id="apply-discount-btn">Apply Discount</button>
-  </div>
-
-
-  <footer class="footer">
-    <p>&copy; 2023 Product Page. All rights reserved.</p>
-  </footer>
-
-  <script src="index.js"></script>
 </body>
-
 </html>
