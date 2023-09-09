@@ -13,6 +13,7 @@ import {
     Welcome,
     Member,
     MemberDetail,
+    Trailer,
     Credit
 } from '../components/home-section'
 
@@ -39,6 +40,9 @@ const Home = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     {({ isActive }) => <Member isActive={isActive}/>}
+                </SwiperSlide>
+                <SwiperSlide>
+                    {({ isActive }) => <Trailer isActive={isActive}/>}
                 </SwiperSlide>
                 <SwiperSlide>
                     {({ isActive }) => <Credit isActive={isActive}/>}

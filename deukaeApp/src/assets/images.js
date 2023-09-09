@@ -33,6 +33,8 @@ import bgLargeGahyeon from './images/gahyeon-bg-large.png'
 
 import closeIcon from './images/insomnia.png'
 
+import trailerImg from './images/trailer-img.png'
+
 export {
     logo,
     membJiu,
@@ -63,5 +65,6 @@ export {
     bgLargeHandong,
     bgLargeYoohyeon,
     bgLargeDami,
-    bgLargeGahyeon
+    bgLargeGahyeon,
+    trailerImg
 }

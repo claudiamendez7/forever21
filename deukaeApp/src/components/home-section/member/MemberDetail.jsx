@@ -1,13 +1,21 @@
 import './member-detail.scss';
 
 import { closeIcon } from '../../../assets/images';
+import { useRef, useEffect } from 'react';
 
 const MemberDetail = props => {
 
     const item = props.item
+    const iframeRef = useRef(null)
+
+    useEffect(() => {
+        const height = iframeRef.current.offsetWidth * 9 / 16 + 'px'
+        iframeRef.current.setAttribute('height', height)
+    }, [])
 
     const onClose = () => {
         document.querySelector(`#memb-detail-${props.id}`).classList.remove('active')
+        iframeRef.current.setAttribute('src', '')
 
         const img = document.querySelector(`#memb-img-${props.id}`)
         img.style.opacity = 0
@@ -33,6 +41,14 @@ const MemberDetail = props => {
                 <br />                           
                 <div className="story">{item.description}</div>                
             </div>
+            <span>Member spotlight</span>
+                <div className="video">
+                    <iframe
+                        title="member spotlight"
+                        ref={iframeRef}
+                        width="100%"
+                    ></iframe>
+                </div>            
 
             <div className="member-detail__close" onClick={onClose}>
                 <img src={closeIcon} alt="icon" />
