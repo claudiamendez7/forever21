@@ -2,7 +2,7 @@ import './credit.scss';
 
 import { useRef, useEffect } from 'react';
 
-import { bgDc } from '../../../assets/videos';
+import { bgVideo } from '../../../assets/videos';
 import Button from '../../button/Button';
 
 const Credit = props => {
@@ -33,7 +33,7 @@ const Credit = props => {
                 loop={true}
                 className="overlay"
             >
-                <source src={bgDc} type="video/mp4"/>
+                <source src={bgVideo} type="video/mp4"/>
             </video>
             <div className="credit__content">
                 <div className="title">

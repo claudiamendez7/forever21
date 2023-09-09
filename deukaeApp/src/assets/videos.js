@@ -1,5 +1,5 @@
-import bgDc from './videos/bg-dc.mp4'
+import bgVideo from './videos/bg-video.mp4'
 
 export {
-    bgDc
+    bgVideo
 }

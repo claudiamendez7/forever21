@@ -3,11 +3,11 @@ import {
     SwiperSlide
 } from 'swiper/react'
 
-import SwiperCore, {
-    EffectFade,
-    Mousewheel,
-    Pagination
-} from 'swiper'
+// import SwiperCore, {
+//     EffectFade,
+//     Mousewheel,
+//     Pagination
+// } from 'swiper'
 
 import {
     Welcome,
@@ -18,7 +18,7 @@ import {
 
 import { membersData } from '../assets/members'
 
-SwiperCore.use([Mousewheel, Pagination, EffectFade])
+// SwiperCore.use([Mousewheel, Pagination, EffectFade])
 
 const swiperOptions = {
     direction: 'vertical',
@@ -38,10 +38,7 @@ const Home = () => {
                     {({ isActive }) => <Welcome isActive={isActive}/>}
                 </SwiperSlide>
                 <SwiperSlide>
-                    {({ isActive }) => <Champion isActive={isActive}/>}
-                </SwiperSlide>
-                <SwiperSlide>
-                    {({ isActive }) => <Trailer isActive={isActive}/>}
+                    {({ isActive }) => <Member isActive={isActive}/>}
                 </SwiperSlide>
                 <SwiperSlide>
                     {({ isActive }) => <Credit isActive={isActive}/>}

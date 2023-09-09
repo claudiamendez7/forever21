@@ -20,7 +20,7 @@ const MemberCard = props => {
         newNode.style.zIndex = '102'
 
         newNode.style.transition = 'all 0.7s ease'
-        newNode.id = `champ-img-${props.id}`
+        newNode.id = `memb-img-${props.id}`
 
         setTimeout(() => {
             newNode.style.width = 'auto'
@@ -31,6 +31,9 @@ const MemberCard = props => {
 
         document.body.appendChild(newNode)
 
+        const videoUrl = `https://youtube.com/embed/${item.video}`
+        document.querySelector(`#memb-detail-${props.id} iframe`).setAttribute('scr', videoUrl)
+        document.querySelector(`#memb-detail-${props.id}`).classList.add('active')
     }
 
     return (
@@ -38,7 +41,7 @@ const MemberCard = props => {
             <div className="frame">
                 <div className="bg-image overlay bg" style={{backgroundImage: `url(${item.bg})`}}></div>
             </div>
-            <img src={item.img} alt="" />
+            <img src={item.img} alt="card" />
             <div className="name">{item.name}</div>
         </div>
     )

@@ -1,4 +1,4 @@
-@use "../../../scss/" as *;
+@use '../../../scss/' as *;
 
 .member-detail {
     position: fixed;
@@ -34,6 +34,14 @@
             padding-left: 1rem;
             border-left: 2px solid $main-color;
             margin: 1rem 0;
+        }
+
+        .video {
+            margin: 1rem 0;
+        }
+
+        iframe {
+            width: 60%;
         }
 
     }

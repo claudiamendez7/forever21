@@ -8,13 +8,13 @@ import hoverEffect from 'hover-effect'
 
 import {
     bg1,
-    MemberJiu,
-    MemberSua,
-    MemberSiyeon,
+    membJiu,
+    membSua,
+    membSiyeon,
     distortion
-} from '../../../assets/images'
+} from '../../../assets/images';
 
-const MemberImgs = [MemberJiu, MemberSua, MemberSiyeon]
+const membImgs = [membJiu, membSua, membSiyeon]
 
 const Welcome = props => {
 
@@ -64,22 +64,22 @@ const Welcome = props => {
             <div className="welcome__info relative">
                 <div className="welcome__info__content">
                     <div className="title">
-                        <span>Welcome To</span>
-                        <h2 className="main-color">Members Charms</h2>
+                        <span>Welcome to</span>
+                        <h2 className="main-color">Dreamcatcher's Universe</h2>
                     </div>
                     <div className="description m-t-4">
                         Check out this amazing girl group from South Korea and the face of K-rock.
                     </div>
                     <div className="btns m-t-4">
                         <Button className="btn-main">CLICK</Button>
-                        <Button className="btn-second">WELCOME TO THE DREAMWORLDD</Button>
+                        <Button className="btn-second">WELCOME TO THE DREAMWORLD</Button>
                     </div>
                 </div>
             </div>
             <div className="welcome__img relative">
                 <div className="welcome__img__slide" id="welcome__img__slide">
                     {
-                        MemberImgs.map((item, index) => (
+                        membImgs.map((item, index) => (
                             <img src={item} key={index}/>
                         ))
                     }

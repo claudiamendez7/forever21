@@ -1,4 +1,4 @@
-import Section, { SectionContent } from "../section/Section"
+import Section, { SectionContent } from '../section/Section'
 
 const HomeSection = props => {
     return (

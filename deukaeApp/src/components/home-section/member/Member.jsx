@@ -1,4 +1,4 @@
-import './champion.scss';
+import './member.scss';
 
 import HomeSection from '../HomeSection';
 import MemberCard from './MemberCard';
@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 const Member = props => {
     return (
         <HomeSection
-            className={`champion ${props.isActive ? 'active' : ''}`}
+            className={`member ${props.isActive ? 'active' : ''}`}
             contentClassName="overlay"
             bgImage={bg2}
         >
