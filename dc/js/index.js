@@ -54,7 +54,7 @@ scrollSlide = () => {
         }
     })
     listitems = document.querySelectorAll('.slide')
-    listitems[0].style.zIndex = '4'
+    listitems[0].style.zIndex = '2'
 }
 
 let productIndex = 0
